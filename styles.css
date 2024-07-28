@@ -9,6 +9,7 @@ body {
     font-size: large;
     background-color: cadetblue;
     color: white;
+    overflow: hidden;
 }
 
 .content-container {
@@ -16,8 +17,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 400px;
-    margin: 20px auto;
+    max-width: 500px;
+    margin: 50px auto;
     text-align: center;
 }
 
@@ -52,7 +53,7 @@ button {
     margin: 10px;
     text-decoration: none;
     cursor: pointer;
-    background-image: linear-gradient(rgb(66, 200, 202), rgb(63, 129, 228));
+    background: linear-gradient(rgb(66, 200, 202), rgb(63, 129, 228));
 }
 .output {
     display: none;
@@ -67,4 +68,71 @@ button {
     background-color: rgb(195, 107, 107);
     color: rgb(0, 0, 0);
     border: 3px solid rgb(241, 73, 54);
+}
+
+.greek-pillar {
+    border: 3px solid wheat;
+    background: repeating-linear-gradient(
+        90deg,
+        wheat 10%,
+        rgb(245, 239, 227) 30%
+    );
+}
+
+.capital {
+    width: 170px;
+    height: 0px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid wheat;
+}
+
+#capital-1 {
+    position: fixed;
+    left: -40px;
+    top: 0px;
+}
+
+#capital-2 {
+    position: fixed;
+    right: -40px;
+    top: 0px;
+}
+
+#pillar-1 {
+    position: fixed;
+    top: 40px;
+    left: 0px;
+    width: 70px;
+    height: 100vh;
+}
+
+#pillar-2 {
+    position: fixed;
+    top: 40px;
+    right: 0px;
+    width: 70px;
+    height: 100vh;
+}
+
+#blockade {
+    max-width: 500px;
+}
+
+@media screen and (max-width: 500px) {
+    #pillar-1 {
+        left: -30px;
+    }
+
+    #pillar-2 {
+        right: -30px;
+    }
+
+    #capital-1 {
+        left: -80px;
+    }
+
+    #capital-2 {
+        right: -80px;
+    }
 }
