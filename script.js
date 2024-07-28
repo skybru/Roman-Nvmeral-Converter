@@ -14,6 +14,7 @@ const convertToRoman = (input, index) => {
         if (input >= valInt[i]) {
             console.log(valRoman[i]);
             result.textContent += valRoman[i];
+            result.style.display = "block";
             return convertToRoman(input - valInt[i], i)
         }
     }
@@ -23,14 +24,18 @@ const checkInput = () => {
     const inputParsed = parseInt(inputNumber.value);
 
     if (isNaN(inputParsed)) {
+        result.classList.add("error");
         result.textContent = "Please enter a valid number";
     } else if (inputParsed <= 0 ) {
+        result.classList.add("error");
         result.textContent = "Please enter a number greater than or equal to 1";
         return;
     } else if (inputParsed > 3999) {
+        result.classList.add("error");
         result.textContent = "Please enter a number less than or equal to 3999";
         return;
     } else {
+        result.classList.remove("error");
         result.textContent = "";
         convertToRoman(inputParsed, 0);
     }
